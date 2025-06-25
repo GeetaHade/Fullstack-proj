@@ -1,5 +1,6 @@
-import { products } from "@/app/product-data";
+
 import { NextRequest } from "next/server";
+import { connectToDb } from "@/app/api/db";
 
 type shoppingCart = Record<string, string[]>;
 
@@ -14,64 +15,92 @@ type Params = {
 }
 
 //load cart
-export async function GET(request: NextRequest, {params} : { params: Params }) {
-    const { id: userId } = params;
-  
-    const productIds = carts[userId];
-  
-    if (!productIds) {
-      return new Response(JSON.stringify({ error: "User cart not found" }), { status: 404 });
-    }
-  
-    const cartProducts = productIds.map(id => products.find(p => p.id === id));
-  
-    return new Response(JSON.stringify(cartProducts), {
+
+export async function GET(request: NextRequest, { params }: { params: Params }) {
+  const { db } = await connectToDb();
+
+  const userId = params.id;
+  const userCart = await db.collection('carts').findOne({ userId });
+
+  if (!userCart) {
+    return new Response(JSON.stringify([]), {
       status: 200,
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
       }
     });
+  }
+
+  const cartIds = userCart.cartIds;
+  const cartProducts = await db.collection('products').find({ id: { $in: cartIds } }).toArray();
+
+  return new Response(JSON.stringify(cartProducts), {
+    status: 200,
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  });
 }
+
 
 type CartBody = {
     productId: string;
 }
 
 //add to cart
-export async function POST(request: NextRequest, {params} : { params: Params }){
-    const userId = params.id;
-    const body: CartBody = await request.json();
-    const productId  = body.productId;
+export async function POST(request: NextRequest, { params }: { params: Params }) {
+  const { db } = await connectToDb();
 
-    carts[userId] = carts[userId] ? carts[userId].concat(productId) : [productId];
+  const userId = params.id;
+  const body: CartBody = await request.json();
+  const productId = body.productId;
 
-    const cartProducts = carts[userId].map(id => products.find(p => p.id === id));
+  const updatedCart = await db.collection('carts').findOneAndUpdate(
+    { userId },
+    { $push: { cartIds: productId } },
+    { upsert: true, returnDocument: 'after' },
+  )
 
-    return new Response(JSON.stringify({ message: "Product added to cart" }), {
-        status: 201,
-        headers: {
-            'Content-Type': 'application/json'
-        }
-        });
+  const cartProducts = await db.collection('products').find({ id: { $in: updatedCart.cartIds } }).toArray()
 
+  return new Response(JSON.stringify(cartProducts), {
+    status: 201,
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  });
 }
   
 //remove from cart
-export async function DELETE(request: NextRequest, {params} : { params}){
-    const userId = params.id;
-    const body = await request.json();
-    const productId = body.productId;
 
-    carts[userId] = carts[userId] ? carts[userId].filter(pid => pid !== productId) : [];
-    const cartProducts = carts[userId].map(id => products.find(p => p.id === id));
+export async function DELETE(request: NextRequest, { params }: { params: Params }) {
+  const { db } = await connectToDb();
 
+  const userId = params.id;
+  const body = await request.json();
+  const productId = body.productId;
 
-    return new Response(JSON.stringify(cartProducts), {
-        status: 202,
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    });
+  const updatedCart = await db.collection('carts').findOneAndUpdate(
+    { userId },
+    { $pull: { cartIds: productId } },
+    { returnDocument: 'after' }
+  );
 
+  if (!updatedCart) {
+    return new Response(JSON.stringify([]), {
+      status: 202,
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    })
+  }
 
+  const cartProducts = await db.collection('products').find({ id: { $in: updatedCart.cartIds } }).toArray();
+
+  return new Response(JSON.stringify(cartProducts), {
+    status: 202,
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  })
 }
