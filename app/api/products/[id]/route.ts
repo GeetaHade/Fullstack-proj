@@ -1,29 +1,31 @@
-import { NextRequest } from 'next/server';
-import { connectToDb } from '@/app/api/db';
-type Params = {
-    id: string;
-}
+import { NextRequest, NextResponse } from 'next/server';
+import { connectToDb } from '../../db';
 
-export async function GET(request: NextRequest, {params} : { params: Params }) {
+// GET /api/products/[id] - Fetch a single product by ID
+export async function GET(
+  request: NextRequest,
+  { params }: { params: { id: string } }
+) {
+  try {
     const { db } = await connectToDb();
-    const  productId = params.id;
-  
-    const product = await db.collection("products").findOne({ id: productId });
-  
+    const productsCollection = db.collection('products');
+    
+    const product = await productsCollection.findOne({ id: params.id });
+    
     if (!product) {
-      return new Response('product not found', { 
-        status: 404, });
-       
-        
+      return NextResponse.json(
+        { error: 'Product not found' },
+        { status: 404 }
+      );
     }
-  
-
-  
-    return new Response(JSON.stringify(product), {
-      status: 200,
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
+    
+    return NextResponse.json(product);
+  } catch (error) {
+    console.error('Error fetching product:', error);
+    return NextResponse.json(
+      { error: 'Failed to fetch product' },
+      { status: 500 }
+    );
+  }
 }
 

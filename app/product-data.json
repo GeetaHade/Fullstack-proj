@@ -1,0 +1,352 @@
+[
+  {
+    "id": "1",
+    "name": "Premium Wireless Headphones",
+    "imageUrl": "https://picsum.photos/400/400?random=11",
+    "description": "High-quality wireless headphones with noise cancellation, 30-hour battery life, and premium sound quality. Perfect for music lovers and professionals.",
+    "price": 199
+  },
+  {
+    "id": "2",
+    "name": "Smart Fitness Watch",
+    "imageUrl": "https://picsum.photos/400/400?random=52",
+    "description": "Advanced fitness tracking watch with heart rate monitor, GPS, and 7-day battery life. Track your workouts and stay connected.",
+    "price": 299
+  },
+  {
+    "id": "3",
+    "name": "Organic Cotton T-Shirt",
+    "imageUrl": "https://picsum.photos/400/400?random=103",
+    "description": "Comfortable organic cotton t-shirt made from sustainable materials. Available in multiple colors and sizes.",
+    "price": 29
+  },
+  {
+    "id": "4",
+    "name": "Ceramic Coffee Mug",
+    "imageUrl": "https://picsum.photos/400/400?random=154",
+    "description": "Handcrafted ceramic coffee mug with a comfortable grip. Microwave and dishwasher safe. Perfect for your morning brew.",
+    "price": 18
+  },
+  {
+    "id": "5",
+    "name": "Leather Crossbody Bag",
+    "imageUrl": "https://picsum.photos/400/400?random=105",
+    "description": "Genuine leather crossbody bag with adjustable strap and multiple compartments. Perfect for everyday use.",
+    "price": 89
+  },
+  {
+    "id": "6",
+    "name": "Wireless Bluetooth Speaker",
+    "imageUrl": "https://picsum.photos/400/400?random=16",
+    "description": "Portable Bluetooth speaker with 360-degree sound and waterproof design. Perfect for outdoor adventures.",
+    "price": 79
+  },
+  {
+    "id": "7",
+    "name": "Stainless Steel Water Bottle",
+    "imageUrl": "https://picsum.photos/400/400?random=407",
+    "description": "Insulated stainless steel water bottle that keeps drinks cold for 24 hours or hot for 12 hours. BPA-free.",
+    "price": 35
+  },
+  {
+    "id": "8",
+    "name": "Denim Jacket",
+    "imageUrl": "https://picsum.photos/400/400?random=108",
+    "description": "Classic denim jacket with a modern fit. Made from premium denim with comfortable stretch fabric.",
+    "price": 65
+  },
+  {
+    "id": "9",
+    "name": "Smartphone Stand",
+    "imageUrl": "https://picsum.photos/400/400?random=309",
+    "description": "Adjustable smartphone stand made from aluminum. Perfect for video calls, watching content, or hands-free use.",
+    "price": 25
+  },
+  {
+    "id": "10",
+    "name": "Yoga Mat",
+    "imageUrl": "https://picsum.photos/400/400?random=60",
+    "description": "Non-slip yoga mat made from eco-friendly materials. Perfect thickness for comfort and stability during practice.",
+    "price": 45
+  },
+  {
+    "id": "11",
+    "name": "Wireless Charging Pad",
+    "imageUrl": "https://picsum.photos/400/400?random=111",
+    "description": "Fast wireless charging pad compatible with all Qi-enabled devices. Sleek design with LED indicator.",
+    "price": 39
+  },
+  {
+    "id": "12",
+    "name": "Sunglasses",
+    "imageUrl": "https://picsum.photos/400/400?random=112",
+    "description": "Polarized sunglasses with UV400 protection. Lightweight frame with comfortable fit for all-day wear.",
+    "price": 55
+  },
+  {
+    "id": "13",
+    "name": "Portable Power Bank",
+    "imageUrl": "https://picsum.photos/400/400?random=113",
+    "description": "20000mAh portable power bank with fast charging capability. Charges multiple devices simultaneously.",
+    "price": 49
+  },
+  {
+    "id": "14",
+    "name": "Running Shoes",
+    "imageUrl": "https://picsum.photos/400/400?random=114",
+    "description": "Lightweight running shoes with responsive cushioning and breathable mesh upper. Perfect for daily runs.",
+    "price": 120
+  },
+  {
+    "id": "15",
+    "name": "Laptop Sleeve",
+    "imageUrl": "https://picsum.photos/400/400?random=115",
+    "description": "Padded laptop sleeve with water-resistant exterior. Fits laptops up to 15 inches with extra storage pocket.",
+    "price": 32
+  },
+  {
+    "id": "16",
+    "name": "Essential Oil Diffuser",
+    "imageUrl": "https://picsum.photos/400/400?random=116",
+    "description": "Ultrasonic essential oil diffuser with LED mood lighting. Large capacity tank for extended use.",
+    "price": 42
+  },
+  {
+    "id": "17",
+    "name": "Kitchen Knife Set",
+    "imageUrl": "https://picsum.photos/400/400?random=117",
+    "description": "Professional kitchen knife set with wooden block. Includes chef knife, paring knife, and utility knife.",
+    "price": 85
+  },
+  {
+    "id": "18",
+    "name": "Plant Pot Set",
+    "imageUrl": "https://picsum.photos/400/400?random=118",
+    "description": "Set of 3 ceramic plant pots with drainage holes. Perfect for indoor plants and succulents.",
+    "price": 28
+  },
+  {
+    "id": "19",
+    "name": "Bluetooth Earbuds",
+    "imageUrl": "https://picsum.photos/400/400?random=119",
+    "description": "True wireless earbuds with active noise cancellation and 8-hour battery life. Includes charging case.",
+    "price": 129
+  },
+  {
+    "id": "20",
+    "name": "Desk Lamp",
+    "imageUrl": "https://picsum.photos/400/400?random=120",
+    "description": "Adjustable LED desk lamp with touch controls and multiple brightness levels. Perfect for work or study.",
+    "price": 58
+  },
+  {
+    "id": "21",
+    "name": "Backpack",
+    "imageUrl": "https://picsum.photos/400/400?random=121",
+    "description": "Durable backpack with laptop compartment and multiple pockets. Water-resistant material for daily use.",
+    "price": 75
+  },
+  {
+    "id": "22",
+    "name": "Coffee Maker",
+    "imageUrl": "https://picsum.photos/400/400?random=122",
+    "description": "Programmable coffee maker with 12-cup capacity and auto-shutoff feature. Perfect for coffee lovers.",
+    "price": 95
+  },
+  {
+    "id": "23",
+    "name": "Phone Case",
+    "imageUrl": "https://picsum.photos/400/400?random=123",
+    "description": "Protective phone case with shock-absorbing design. Available for iPhone and Samsung models.",
+    "price": 22
+  },
+  {
+    "id": "24",
+    "name": "Throw Pillow",
+    "imageUrl": "https://picsum.photos/400/400?random=124",
+    "description": "Decorative throw pillow with removable cover. Made from soft, durable fabric in various patterns.",
+    "price": 24
+  },
+  {
+    "id": "25",
+    "name": "Gaming Mouse",
+    "imageUrl": "https://picsum.photos/400/400?random=125",
+    "description": "High-precision gaming mouse with customizable RGB lighting and programmable buttons.",
+    "price": 69
+  },
+  {
+    "id": "26",
+    "name": "Candle Set",
+    "imageUrl": "https://picsum.photos/400/400?random=126",
+    "description": "Set of 3 scented candles in glass jars. Long-burning with natural soy wax and cotton wicks.",
+    "price": 38
+  },
+  {
+    "id": "27",
+    "name": "Wall Clock",
+    "imageUrl": "https://picsum.photos/400/400?random=127",
+    "description": "Modern wall clock with silent movement and clean design. Perfect for any room decor.",
+    "price": 45
+  },
+  {
+    "id": "28",
+    "name": "Hair Dryer",
+    "imageUrl": "https://picsum.photos/400/400?random=128",
+    "description": "Professional hair dryer with ionic technology and multiple heat settings. Includes concentrator and diffuser.",
+    "price": 89
+  },
+  {
+    "id": "29",
+    "name": "Puzzle Set",
+    "imageUrl": "https://picsum.photos/400/400?random=129",
+    "description": "1000-piece jigsaw puzzle with beautiful artwork. Perfect for family entertainment and relaxation.",
+    "price": 19
+  },
+  {
+    "id": "30",
+    "name": "Bath Towel Set",
+    "imageUrl": "https://picsum.photos/400/400?random=130",
+    "description": "Set of 4 luxury bath towels made from 100% cotton. Soft, absorbent, and quick-drying.",
+    "price": 52
+  },
+  {
+    "id": "31",
+    "name": "Blender",
+    "imageUrl": "https://picsum.photos/400/400?random=131",
+    "description": "High-speed blender with 6-cup capacity and multiple speed settings. Perfect for smoothies and food prep.",
+    "price": 78
+  },
+  {
+    "id": "32",
+    "name": "Picture Frame",
+    "imageUrl": "https://picsum.photos/400/400?random=132",
+    "description": "Elegant picture frame with glass front and wooden border. Available in multiple sizes.",
+    "price": 31
+  },
+  {
+    "id": "33",
+    "name": "Wireless Keyboard",
+    "imageUrl": "https://picsum.photos/400/400?random=133",
+    "description": "Slim wireless keyboard with quiet keys and long battery life. Compatible with all devices.",
+    "price": 49
+  },
+  {
+    "id": "34",
+    "name": "Scented Soap Set",
+    "imageUrl": "https://picsum.photos/400/400?random=134",
+    "description": "Set of 6 handmade soaps with natural ingredients and delightful fragrances. Perfect gift set.",
+    "price": 26
+  },
+  {
+    "id": "35",
+    "name": "Tablet Stand",
+    "imageUrl": "https://picsum.photos/400/400?random=135",
+    "description": "Adjustable tablet stand with multiple viewing angles. Made from durable aluminum.",
+    "price": 29
+  },
+  {
+    "id": "36",
+    "name": "Wine Glass Set",
+    "imageUrl": "https://picsum.photos/400/400?random=136",
+    "description": "Set of 4 crystal wine glasses with elegant design. Perfect for entertaining and special occasions.",
+    "price": 42
+  },
+  {
+    "id": "37",
+    "name": "Fitness Resistance Bands",
+    "imageUrl": "https://picsum.photos/400/400?random=137",
+    "description": "Set of 5 resistance bands with different resistance levels. Includes carrying bag and exercise guide.",
+    "price": 23
+  },
+  {
+    "id": "38",
+    "name": "Desk Organizer",
+    "imageUrl": "https://picsum.photos/400/400?random=138",
+    "description": "Multi-compartment desk organizer with slots for pens, paper clips, and other office supplies.",
+    "price": 18
+  },
+  {
+    "id": "39",
+    "name": "Bedside Lamp",
+    "imageUrl": "https://picsum.photos/400/400?random=139",
+    "description": "Touch-controlled bedside lamp with warm LED lighting. Perfect for reading and ambient lighting.",
+    "price": 48
+  },
+  {
+    "id": "40",
+    "name": "Cutting Board",
+    "imageUrl": "https://picsum.photos/400/400?random=140",
+    "description": "Bamboo cutting board with juice groove and non-slip feet. Large size perfect for meal prep.",
+    "price": 34
+  },
+  {
+    "id": "41",
+    "name": "Phone Tripod",
+    "imageUrl": "https://picsum.photos/400/400?random=141",
+    "description": "Adjustable phone tripod with Bluetooth remote. Perfect for photos, videos, and video calls.",
+    "price": 27
+  },
+  {
+    "id": "42",
+    "name": "Throw Blanket",
+    "imageUrl": "https://picsum.photos/400/400?random=142",
+    "description": "Soft throw blanket made from premium materials. Perfect for snuggling on the couch.",
+    "price": 36
+  },
+  {
+    "id": "43",
+    "name": "Mechanical Keyboard",
+    "imageUrl": "https://picsum.photos/400/400?random=143",
+    "description": "RGB mechanical keyboard with tactile switches and customizable lighting effects.",
+    "price": 95
+  },
+  {
+    "id": "44",
+    "name": "Aromatherapy Candle",
+    "imageUrl": "https://picsum.photos/400/400?random=144",
+    "description": "Lavender aromatherapy candle in a beautiful glass jar. Promotes relaxation and stress relief.",
+    "price": 22
+  },
+  {
+    "id": "45",
+    "name": "Alarm Clock",
+    "imageUrl": "https://picsum.photos/400/400?random=145",
+    "description": "Digital alarm clock with large display and multiple alarm settings. Includes USB charging port.",
+    "price": 33
+  },
+  {
+    "id": "46",
+    "name": "Curling Iron",
+    "imageUrl": "https://picsum.photos/400/400?random=146",
+    "description": "Professional curling iron with adjustable temperature settings and ceramic barrel.",
+    "price": 67
+  },
+  {
+    "id": "47",
+    "name": "Board Game",
+    "imageUrl": "https://picsum.photos/400/400?random=147",
+    "description": "Family board game with strategy elements. Perfect for game nights and family bonding.",
+    "price": 28
+  },
+  {
+    "id": "48",
+    "name": "Hand Towel Set",
+    "imageUrl": "https://picsum.photos/400/400?random=148",
+    "description": "Set of 6 hand towels with decorative patterns. Made from soft, absorbent cotton.",
+    "price": 29
+  },
+  {
+    "id": "49",
+    "name": "Food Processor",
+    "imageUrl": "https://picsum.photos/400/400?random=149",
+    "description": "8-cup food processor with multiple attachments. Perfect for chopping, slicing, and pureeing.",
+    "price": 89
+  },
+  {
+    "id": "50",
+    "name": "Photo Album",
+    "imageUrl": "https://picsum.photos/400/400?random=150",
+    "description": "Beautiful photo album with acid-free pages. Holds 200 photos with decorative cover.",
+    "price": 41
+  }
+] 
