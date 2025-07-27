@@ -4,12 +4,23 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function CartPage() {
-    const [cartItems, setCartItems] = useState([
-        { id: '1', quantity: 2 },
-        { id: '2', quantity: 1 }
-    ]);
+    // Load cart from localStorage or default to empty array
+    const [cartItems, setCartItems] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const stored = localStorage.getItem('cart');
+            return stored ? JSON.parse(stored) : [];
+        }
+        return [];
+    });
     const [cartProducts, setCartProducts] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
+
+    // Keep localStorage in sync when cartItems change
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('cart', JSON.stringify(cartItems));
+        }
+    }, [cartItems]);
 
     useEffect(() => {
         async function fetchProducts() {
@@ -17,7 +28,7 @@ export default function CartPage() {
             try {
                 const response = await fetch('/api/products');
                 const products = await response.json();
-                const mapped = cartItems.map(item => {
+                const mapped = cartItems.map((item: { id: string; quantity: number }) => {
                     const product = products.find((p: any) => p.id === item.id);
                     return product ? { ...product, quantity: item.quantity } : null;
                 }).filter(Boolean);
@@ -33,16 +44,16 @@ export default function CartPage() {
 
     const updateQuantity = (id: string, newQuantity: number) => {
         if (newQuantity <= 0) {
-            setCartItems(cartItems.filter(item => item.id !== id));
+            setCartItems(cartItems.filter((item: { id: string; quantity: number }) => item.id !== id));
         } else {
-            setCartItems(cartItems.map(item => 
+            setCartItems(cartItems.map((item: { id: string; quantity: number }) => 
                 item.id === id ? { ...item, quantity: newQuantity } : item
             ));
         }
     };
 
     const removeItem = (id: string) => {
-        setCartItems(cartItems.filter(item => item.id !== id));
+        setCartItems(cartItems.filter((item: { id: string; quantity: number }) => item.id !== id));
     };
 
     const subtotal = cartProducts.reduce((sum, product) => sum + (product.price * product.quantity), 0);

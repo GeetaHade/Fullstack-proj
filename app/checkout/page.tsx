@@ -19,12 +19,17 @@ export default function CheckoutPage() {
         cardName: ''
     });
 
-    const [cartItems] = useState([
-        { id: '1', name: 'Premium Wireless Headphones', price: 199, quantity: 2, image: 'https://picsum.photos/400/400?random=1' },
-        { id: '2', name: 'Smart Fitness Watch', price: 299, quantity: 1, image: 'https://picsum.photos/400/400?random=2' }
-    ]);
+    // Load cart from localStorage
+    const [cartItems, setCartItems] = useState(() => {
+        if (typeof window !== 'undefined') {
+            const stored = localStorage.getItem('cart');
+            return stored ? JSON.parse(stored) : [];
+        }
+        return [];
+    });
+    const [orderPlaced, setOrderPlaced] = useState(false);
 
-    const subtotal = cartItems.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+    const subtotal = cartItems.reduce((sum: number, item: any) => sum + (item.price * item.quantity), 0);
     const shipping = 5.99;
     const tax = subtotal * 0.08;
     const total = subtotal + shipping + tax;
@@ -39,9 +44,42 @@ export default function CheckoutPage() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Handle checkout logic here
-        alert('Order placed successfully! Thank you for your purchase.');
+        // Clear cart from localStorage and state
+        if (typeof window !== 'undefined') {
+            localStorage.removeItem('cart');
+        }
+        setCartItems([]);
+        setOrderPlaced(true);
     };
+
+    if (orderPlaced) {
+        return (
+            <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center">
+                <div className="bg-white rounded-2xl shadow-lg p-10 max-w-xl w-full text-center">
+                    <h1 className="text-3xl font-bold text-green-600 mb-4">Order placed successfully!</h1>
+                    <p className="text-lg text-gray-700 mb-6">Thank you for your purchase.</p>
+                    <h2 className="text-xl font-semibold text-gray-900 mb-2">Order Summary</h2>
+                    <div className="divide-y divide-gray-200 mb-6">
+                        {cartItems.length === 0 ? (
+                            <p className="text-gray-500">Your cart is now empty.</p>
+                        ) : (
+                            cartItems.map((item: { id: string; name: string; price: number; quantity: number; image: string }) => (
+                                <div key={item.id} className="py-2 flex justify-between items-center">
+                                    <span>{item.name} x {item.quantity}</span>
+                                    <span className="font-bold text-blue-600">${(item.price * item.quantity).toFixed(2)}</span>
+                                </div>
+                            ))
+                        )}
+                    </div>
+                    <div className="flex justify-between text-lg font-semibold mb-2">
+                        <span>Total:</span>
+                        <span>${total.toFixed(2)}</span>
+                    </div>
+                    <Link href="/products" className="inline-block mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">Continue Shopping</Link>
+                </div>
+            </div>
+        );
+    }
 
     return (
         <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">

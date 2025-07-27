@@ -16,14 +16,14 @@
   {
     "id": "3",
     "name": "Organic Cotton T-Shirt",
-    "imageUrl": "https://picsum.photos/400/400?random=103",
+    "imageUrl": "/shirt.jpg",
     "description": "Comfortable organic cotton t-shirt made from sustainable materials. Available in multiple colors and sizes.",
     "price": 29
   },
   {
     "id": "4",
     "name": "Ceramic Coffee Mug",
-    "imageUrl": "https://picsum.photos/400/400?random=154",
+    "imageUrl": "/mug.jpg",
     "description": "Handcrafted ceramic coffee mug with a comfortable grip. Microwave and dishwasher safe. Perfect for your morning brew.",
     "price": 18
   },
